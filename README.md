@@ -68,21 +68,8 @@ effects the outer shape only partly explains. The CNN isn't a failure though:
 it shows the pipeline works on raw geometry, which is the approach that scales
 to full CFD mesh data where no handy 18-number summary exists.
 
-### What makes this more than a benchmark table
 
-- **Geometry validated**: the CST-to-shape reconstruction was verified against
-  the published NACA 0012/2412/4415/6412 geometry (thickness and camber match
-  to within the fit tolerance). See the notebook.
-- **Residual analysis**: errors concentrate in the non-linear stall region
-  (high angle of attack), exactly where a surrogate is expected to struggle.
-- **Polar validation on unseen airfoils**: full predicted CL/CD vs α curves
-  overlaid with the actual simulation points for held-out shapes.
-- **Architecture experiment**: MLP vs 1D-CNNs on raw shape vs coefficients,
-  including *why* drag is harder than lift for all of them.
-- **Live demo runs on arbitrary designs**, not just presets: edit the 18
-  coefficients and watch the shape and polar respond.
-
-## Notebook (everything is in it)
+## Notebook
 
 [`ML_Surrogate_Airfoil_Aerodynamics.ipynb`](ML_Surrogate_Airfoil_Aerodynamics.ipynb)
 is fully executed. Click it on GitHub to see the EDA, feature study, training
